@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="Document" customModule="Wireworld" customModuleProvider="target">
+            <connections>
+                <outlet property="emptyColorView" destination="wfj-Mz-QIt" id="ar4-hW-jhh"/>
+                <outlet property="gridView" destination="lRW-ga-Ty8" id="chO-jK-AGH"/>
+                <outlet property="headColorView" destination="KLq-AW-YY1" id="rvU-f1-JBc"/>
+                <outlet property="tailColorView" destination="DPZ-mL-bdD" id="f7g-3M-Z9Q"/>
+                <outlet property="window" destination="xOd-HO-29H" id="JIz-fz-R2o"/>
+                <outlet property="wireColorView" destination="NcK-oy-ucr" id="znG-XY-WQh"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="xOd-HO-29H" userLabel="Window">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="133" y="235" width="761" height="480"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <value key="minSize" type="size" width="94" height="86"/>
+            <view key="contentView" wantsLayer="YES" id="gIp-Ho-8D9">
+                <rect key="frame" x="0.0" y="0.0" width="761" height="480"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ho-bb-pyq">
+                        <rect key="frame" x="14" y="330" width="72" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Step" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ld2-4f-BiV">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="stepActionWithSender:" target="-2" id="TsL-fv-rAw"/>
+                        </connections>
+                    </button>
+                    <button identifier="head" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vcu-07-tcu">
+                        <rect key="frame" x="45" y="443" width="54" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="radio" title="Head" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="Nve-xZ-pmW">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="cellTypeActionWithSender:" target="-2" id="2oe-1x-7Ks"/>
+                        </connections>
+                    </button>
+                    <button identifier="tail" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ja7-fe-Kfa">
+                        <rect key="frame" x="45" y="421" width="43" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="radio" title="Tail" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="KMQ-gY-8lf">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="cellTypeActionWithSender:" target="-2" id="J4H-qh-vIU"/>
+                        </connections>
+                    </button>
+                    <button identifier="wire" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lvD-ML-bms">
+                        <rect key="frame" x="45" y="399" width="50" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="radio" title="Wire" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="hn4-wq-TBY">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="cellTypeActionWithSender:" target="-2" id="icG-Ve-rcz"/>
+                        </connections>
+                    </button>
+                    <button identifier="empty" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9eq-5g-Uwx">
+                        <rect key="frame" x="45" y="377" width="61" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="radio" title="Empty" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="rvL-lf-8Fz">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="cellTypeActionWithSender:" target="-2" id="vBm-vF-2vG"/>
+                        </connections>
+                    </button>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KLq-AW-YY1" customClass="ColorView" customModule="Wireworld">
+                        <rect key="frame" x="20" y="443" width="18" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    </customView>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DPZ-mL-bdD" customClass="ColorView" customModule="Wireworld">
+                        <rect key="frame" x="20" y="421" width="18" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    </customView>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NcK-oy-ucr" customClass="ColorView" customModule="Wireworld">
+                        <rect key="frame" x="20" y="399" width="18" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    </customView>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wfj-Mz-QIt" customClass="ColorView" customModule="Wireworld">
+                        <rect key="frame" x="20" y="377" width="18" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    </customView>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lRW-ga-Ty8" customClass="GridView" customModule="Wireworld">
+                        <rect key="frame" x="121" y="0.0" width="640" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <connections>
+                            <outlet property="delegate" destination="-2" id="VfV-MK-LIP"/>
+                        </connections>
+                    </customView>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CtG-qV-B6C">
+                        <rect key="frame" x="14" y="13" width="72" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Clear" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1mp-vn-Kov">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="clearActionWithSender:" target="-2" id="XKk-K8-pi9"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-x8E"/>
+            </connections>
+            <point key="canvasLocation" x="192.5" y="180"/>
+        </window>
+    </objects>
+</document>

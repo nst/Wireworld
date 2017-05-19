@@ -1,0 +1,329 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		030F83131ECFACDC0072B2EC /* DocIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 030F83121ECFACDC0072B2EC /* DocIcon.png */; };
+		0367372B1EC66D3E0020DD9E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0367372A1EC66D3E0020DD9E /* Model.swift */; };
+		03722D121EC6459F00387C38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03722D111EC6459F00387C38 /* AppDelegate.swift */; };
+		03722D141EC6459F00387C38 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03722D131EC6459F00387C38 /* Document.swift */; };
+		03722D171EC6459F00387C38 /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03722D151EC6459F00387C38 /* Document.xib */; };
+		03722D191EC6459F00387C38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03722D181EC6459F00387C38 /* Assets.xcassets */; };
+		03722D1C1EC6459F00387C38 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03722D1A1EC6459F00387C38 /* MainMenu.xib */; };
+		03722D241EC645EB00387C38 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03722D231EC645EB00387C38 /* GridView.swift */; };
+		03722D261EC6482F00387C38 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03722D251EC6482F00387C38 /* Cell.swift */; };
+		03722D281EC648B500387C38 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03722D271EC648B500387C38 /* Matrix.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		030F83121ECFACDC0072B2EC /* DocIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DocIcon.png; sourceTree = "<group>"; };
+		0367372A1EC66D3E0020DD9E /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		03722D0E1EC6459F00387C38 /* Wireworld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wireworld.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		03722D111EC6459F00387C38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		03722D131EC6459F00387C38 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		03722D161EC6459F00387C38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Document.xib; sourceTree = "<group>"; };
+		03722D181EC6459F00387C38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		03722D1B1EC6459F00387C38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		03722D1D1EC6459F00387C38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03722D231EC645EB00387C38 /* GridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		03722D251EC6482F00387C38 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		03722D271EC648B500387C38 /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		03722D0B1EC6459E00387C38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03722D051EC6459E00387C38 = {
+			isa = PBXGroup;
+			children = (
+				03722D101EC6459F00387C38 /* Wireworld */,
+				03722D0F1EC6459F00387C38 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		03722D0F1EC6459F00387C38 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				03722D0E1EC6459F00387C38 /* Wireworld.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		03722D101EC6459F00387C38 /* Wireworld */ = {
+			isa = PBXGroup;
+			children = (
+				03722D111EC6459F00387C38 /* AppDelegate.swift */,
+				03722D231EC645EB00387C38 /* GridView.swift */,
+				03722D131EC6459F00387C38 /* Document.swift */,
+				0367372A1EC66D3E0020DD9E /* Model.swift */,
+				03722D251EC6482F00387C38 /* Cell.swift */,
+				03722D271EC648B500387C38 /* Matrix.swift */,
+				03722D151EC6459F00387C38 /* Document.xib */,
+				03722D181EC6459F00387C38 /* Assets.xcassets */,
+				03722D1A1EC6459F00387C38 /* MainMenu.xib */,
+				03722D1D1EC6459F00387C38 /* Info.plist */,
+				030F83121ECFACDC0072B2EC /* DocIcon.png */,
+			);
+			path = Wireworld;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		03722D0D1EC6459E00387C38 /* Wireworld */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03722D201EC6459F00387C38 /* Build configuration list for PBXNativeTarget "Wireworld" */;
+			buildPhases = (
+				03722D0A1EC6459E00387C38 /* Sources */,
+				03722D0B1EC6459E00387C38 /* Frameworks */,
+				03722D0C1EC6459E00387C38 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Wireworld;
+			productName = Wireworld;
+			productReference = 03722D0E1EC6459F00387C38 /* Wireworld.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		03722D061EC6459E00387C38 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Nicolas Seriot";
+				TargetAttributes = {
+					03722D0D1EC6459E00387C38 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = VBYRKYS73S;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 03722D091EC6459E00387C38 /* Build configuration list for PBXProject "Wireworld" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 03722D051EC6459E00387C38;
+			productRefGroup = 03722D0F1EC6459F00387C38 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				03722D0D1EC6459E00387C38 /* Wireworld */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		03722D0C1EC6459E00387C38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03722D191EC6459F00387C38 /* Assets.xcassets in Resources */,
+				030F83131ECFACDC0072B2EC /* DocIcon.png in Resources */,
+				03722D171EC6459F00387C38 /* Document.xib in Resources */,
+				03722D1C1EC6459F00387C38 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		03722D0A1EC6459E00387C38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03722D141EC6459F00387C38 /* Document.swift in Sources */,
+				03722D281EC648B500387C38 /* Matrix.swift in Sources */,
+				03722D261EC6482F00387C38 /* Cell.swift in Sources */,
+				0367372B1EC66D3E0020DD9E /* Model.swift in Sources */,
+				03722D241EC645EB00387C38 /* GridView.swift in Sources */,
+				03722D121EC6459F00387C38 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		03722D151EC6459F00387C38 /* Document.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03722D161EC6459F00387C38 /* Base */,
+			);
+			name = Document.xib;
+			sourceTree = "<group>";
+		};
+		03722D1A1EC6459F00387C38 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03722D1B1EC6459F00387C38 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		03722D1E1EC6459F00387C38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		03722D1F1EC6459F00387C38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		03722D211EC6459F00387C38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VBYRKYS73S;
+				INFOPLIST_FILE = Wireworld/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ch.seriot.Wireworld;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		03722D221EC6459F00387C38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VBYRKYS73S;
+				INFOPLIST_FILE = Wireworld/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ch.seriot.Wireworld;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		03722D091EC6459E00387C38 /* Build configuration list for PBXProject "Wireworld" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03722D1E1EC6459F00387C38 /* Debug */,
+				03722D1F1EC6459F00387C38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03722D201EC6459F00387C38 /* Build configuration list for PBXNativeTarget "Wireworld" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03722D211EC6459F00387C38 /* Debug */,
+				03722D221EC6459F00387C38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 03722D061EC6459E00387C38 /* Project object */;
+}

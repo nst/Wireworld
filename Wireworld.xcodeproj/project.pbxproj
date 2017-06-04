@@ -32,6 +32,7 @@
 		03722D231EC645EB00387C38 /* GridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		03722D251EC6482F00387C38 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		03722D271EC648B500387C38 /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		038C31891EE4857B0071546D /* Wireworld.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wireworld.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +65,7 @@
 		03722D101EC6459F00387C38 /* Wireworld */ = {
 			isa = PBXGroup;
 			children = (
+				038C31891EE4857B0071546D /* Wireworld.entitlements */,
 				03722D111EC6459F00387C38 /* AppDelegate.swift */,
 				03722D231EC645EB00387C38 /* GridView.swift */,
 				03722D131EC6459F00387C38 /* Document.swift */,
@@ -113,6 +115,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = VBYRKYS73S;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -278,6 +285,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Wireworld/Wireworld.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = VBYRKYS73S;
 				INFOPLIST_FILE = Wireworld/Info.plist;
@@ -292,6 +300,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Wireworld/Wireworld.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = VBYRKYS73S;
 				INFOPLIST_FILE = Wireworld/Info.plist;

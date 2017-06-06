@@ -11,6 +11,7 @@
                 <outlet property="emptyColorView" destination="wfj-Mz-QIt" id="ar4-hW-jhh"/>
                 <outlet property="gridView" destination="lRW-ga-Ty8" id="chO-jK-AGH"/>
                 <outlet property="headColorView" destination="KLq-AW-YY1" id="rvU-f1-JBc"/>
+                <outlet property="runStopButton" destination="2wM-vd-r1e" id="xH2-oO-1pL"/>
                 <outlet property="tailColorView" destination="DPZ-mL-bdD" id="f7g-3M-Z9Q"/>
                 <outlet property="window" destination="xOd-HO-29H" id="JIz-fz-R2o"/>
                 <outlet property="wireColorView" destination="NcK-oy-ucr" id="znG-XY-WQh"/>
@@ -29,7 +30,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ho-bb-pyq">
-                        <rect key="frame" x="14" y="330" width="72" height="32"/>
+                        <rect key="frame" x="14" y="330" width="89" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Step" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ld2-4f-BiV">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -109,8 +110,19 @@ DQ
                             <outlet property="delegate" destination="-2" id="VfV-MK-LIP"/>
                         </connections>
                     </customView>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2wM-vd-r1e">
+                        <rect key="frame" x="14" y="297" width="89" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Run/Stop" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="efQ-C5-NNu">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="runStopActionWithSender:" target="-2" id="2ko-Bw-Gay"/>
+                        </connections>
+                    </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CtG-qV-B6C">
-                        <rect key="frame" x="14" y="13" width="72" height="32"/>
+                        <rect key="frame" x="14" y="13" width="96" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Clear" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1mp-vn-Kov">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>

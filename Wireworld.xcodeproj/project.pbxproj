@@ -17,6 +17,7 @@
 		03722D241EC645EB00387C38 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03722D231EC645EB00387C38 /* GridView.swift */; };
 		03722D261EC6482F00387C38 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03722D251EC6482F00387C38 /* Cell.swift */; };
 		03722D281EC648B500387C38 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03722D271EC648B500387C38 /* Matrix.swift */; };
+		03EA09DA1EE554F500E4AAB5 /* STGIFMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EA09D91EE554F500E4AAB5 /* STGIFMaker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		03722D251EC6482F00387C38 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		03722D271EC648B500387C38 /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
 		038C31891EE4857B0071546D /* Wireworld.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wireworld.entitlements; sourceTree = "<group>"; };
+		03EA09D91EE554F500E4AAB5 /* STGIFMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STGIFMaker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +51,7 @@
 		03722D051EC6459E00387C38 = {
 			isa = PBXGroup;
 			children = (
+				03EA09D91EE554F500E4AAB5 /* STGIFMaker.swift */,
 				03722D101EC6459F00387C38 /* Wireworld */,
 				03722D0F1EC6459F00387C38 /* Products */,
 			);
@@ -161,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03722D141EC6459F00387C38 /* Document.swift in Sources */,
+				03EA09DA1EE554F500E4AAB5 /* STGIFMaker.swift in Sources */,
 				03722D281EC648B500387C38 /* Matrix.swift in Sources */,
 				03722D261EC6482F00387C38 /* Cell.swift in Sources */,
 				0367372B1EC66D3E0020DD9E /* Model.swift in Sources */,

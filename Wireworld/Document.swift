@@ -10,13 +10,17 @@ import Cocoa
 
 class Document: NSDocument, GridViewDelegate, ModelDelegate {
 
-    var model : Model = Model.defaultModel()
+    var model: Model = Model.defaultModel()
+    var timer: Timer? = nil
+    var gifImages : [NSImage] = []
     
     @IBOutlet weak var gridView: GridView!
     @IBOutlet weak var headColorView: ColorView!
     @IBOutlet weak var tailColorView: ColorView!
     @IBOutlet weak var wireColorView: ColorView!
     @IBOutlet weak var emptyColorView: ColorView!
+
+    @IBOutlet weak var runStopButton: NSButton!
 
     override init() {
         super.init()
@@ -32,6 +36,8 @@ class Document: NSDocument, GridViewDelegate, ModelDelegate {
 
         self.gridView.setNeedsDisplay(self.gridView.frame)
         
+        self.runStopButton.title = "Run"
+
         self.model.delegate = self
     }
     
@@ -94,11 +100,73 @@ class Document: NSDocument, GridViewDelegate, ModelDelegate {
     }
     
     @IBAction func stepAction(sender: NSButton) {
-        Swift.print("-- stepAction")
-        
         self.model.step()
     }
-    
+
+    @IBAction func runStopAction(sender: NSButton) {
+        Swift.print("-- runStopAction")
+        
+        if let t = timer {
+            t.invalidate()
+            timer = nil
+            runStopButton.title = "Run"
+
+            // save gif
+            
+            let savePanel = NSSavePanel()
+            
+            var filename = "\(Date().timeIntervalSince1970)"
+            if let dn = NSURL(fileURLWithPath: self.displayName).deletingPathExtension?.lastPathComponent {
+                filename = dn
+            }
+            savePanel.nameFieldStringValue = "\(filename).gif"
+            
+            guard let window = self.windowForSheet else { return }
+            
+            savePanel.beginSheetModal(for: window) { (result: Int) -> Void in
+                if result == NSFileHandlingPanelOKButton {
+                    guard let exportedFileURL = savePanel.url else {
+                        self.gifImages = []
+                        return
+                    }
+                    
+                    guard let existingGIF = STGIFMaker(destinationPath: exportedFileURL.path, loop: true) else {
+                        Swift.print("-- cannot use path \(exportedFileURL.path)")
+                        return
+                    }
+                    
+                    for image in self.gifImages {
+                        existingGIF.append(image: image, duration: 0.5)
+                    }
+                    
+                    _ = existingGIF.write()
+                    
+                    self.gifImages = []
+                }
+            }
+            
+        } else {
+            runStopButton.title = "Stop"
+            
+            // start making gif
+
+            self.model.step()
+            
+            guard let image = self.gridView.toImage() else { assertionFailure(); return }
+            gifImages.append(image)
+
+            self.timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true, block: { (Timer) in
+                self.model.step()
+                guard let image = self.gridView.toImage() else { assertionFailure(); return }
+                self.gifImages.append(image)
+            })
+            
+            
+            
+            
+        }
+    }
+
     @IBAction func cellTypeAction(sender: NSButton) {
         Swift.print("-- stepCellType")
         
@@ -166,5 +234,17 @@ class ColorView: NSView {
         c.setStrokeColor(NSColor.black.cgColor)
         c.fill(self.bounds)
         c.stroke(self.bounds)
+    }
+}
+
+extension NSView {
+    func toImage() -> NSImage? {
+        let size = self.frame.size
+        guard let bir = self.bitmapImageRepForCachingDisplay(in:self.bounds) else { assertionFailure(); return nil }
+        bir.size = size
+        self.cacheDisplay(in: self.bounds, to: bir)
+        let image = NSImage(size: size)
+        image.addRepresentation(bir)
+        return image
     }
 }

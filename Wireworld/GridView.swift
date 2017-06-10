@@ -68,17 +68,16 @@ class GridView: NSView {
             for row in 0..<matrix.NB_ROWS {
                 
                 let r = self.rectForCell(col: col, row: row)
-                //if dirtyRect.intersects(r) == false { continue }
                 if self.needsToDraw(r) == false { continue }
                 
-                //Swift.print("      draw \(col),\(row)")
-                
-                self.drawCell(col:col, row:row, context:c)
+                self.drawCellRect(col:col, row:row, rect:r, context:c)
             }
         }
     }
     
-    func drawCell(col: Int, row: Int, context c: CGContext) {
+    func drawCellRect(col: Int, row: Int, rect: CGRect, context c: CGContext) {
+        
+        //Swift.print("-- draw col:\(col) row:\(row)")
         
         guard let model = self.delegate?.model else {
             assertionFailure()
@@ -89,12 +88,7 @@ class GridView: NSView {
         
         let cell = matrix[col,row]
         
-        let rect = self.rectForCell(col: col, row: row)
-        
-        //Swift.print("rect \(rect)")
-        
         c.setStrokeColor(NSColor.darkGray.cgColor)
-        //c.setLineWidth(1.0)
         
         c.setFillColor(cell.state.color.cgColor)
         

@@ -11,7 +11,7 @@ import AppKit
 enum CellState: String {
     
     case empty = " "
-    case wire = "-"
+    case wire = "."
     case tail = "="
     case head = "*"
         

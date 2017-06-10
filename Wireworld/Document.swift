@@ -48,6 +48,14 @@ class Document: NSDocument, GridViewDelegate, ModelDelegate {
         windowController.document = self
     }
     
+    override func close() {
+        if let t = self.timer {
+            t.invalidate()
+            self.timer = nil
+        }
+        super.close()
+    }
+
     override class func autosavesInPlace() -> Bool {
         return false
     }
@@ -70,7 +78,7 @@ class Document: NSDocument, GridViewDelegate, ModelDelegate {
     }
     
     override func read(from data: Data, ofType typeName: String) throws {
-        
+                
         do {
             guard let s = String(data: data, encoding: .utf8) else {
                 throw NSError(domain: "WireWorld", code: 1, userInfo: [NSLocalizedDescriptionKey:"Cannot get string out of data"])
@@ -82,14 +90,17 @@ class Document: NSDocument, GridViewDelegate, ModelDelegate {
 
             self.model = existingModel
             self.hasUndoManager = true
-            
+        
         } catch let e {
             Swift.print("-- no data")
             self.presentError(e)
         }
         
-        
         self.updateChangeCount(.changeCleared)
+
+        if let gv = self.gridView {
+            gv.setNeedsDisplay(self.gridView.frame)
+        }
     }
     
     @IBAction func stepAction(sender: NSButton) {

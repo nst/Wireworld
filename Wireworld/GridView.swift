@@ -164,7 +164,6 @@ class GridView: NSView {
     }
     
     override func mouseDown(with event: NSEvent) {
-        Swift.print("-- mouseDown")
         
         self.delegate?.undoManager?.beginUndoGrouping()
         
@@ -176,7 +175,6 @@ class GridView: NSView {
     }
     
     override func mouseUp(with event: NSEvent) {
-        Swift.print("-- mouseUp")
         self.delegate?.undoManager?.endUndoGrouping()
     }
     

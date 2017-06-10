@@ -65,7 +65,7 @@ IA
                             <action selector="cellTypeActionWithSender:" target="-2" id="J4H-qh-vIU"/>
                         </connections>
                     </button>
-                    <button identifier="-" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lvD-ML-bms">
+                    <button identifier="." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lvD-ML-bms">
                         <rect key="frame" x="45" y="399" width="50" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="radio" title="Wire" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="hn4-wq-TBY">

@@ -31,7 +31,6 @@ class Model: NSObject {
         for row in 0..<matrix.NB_ROWS {
             for col in 0..<matrix.NB_COLS {
                 guard let cell = matrix.optionalCell((col: col, row: row)) else { assertionFailure(); return "" }
-                Swift.print("-- state: \(cell.state), rawValue: \(cell.state.rawValue)")
                 rep += cell.state.rawValue
             }
             rep += "\n"

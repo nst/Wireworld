@@ -14,7 +14,7 @@ Cells have four possible states, which evolve as follows:
 
 Wireworld can be used to build logic gates and, from there, [The Wireworld computer](https://www.quinapalus.com/wi-index.html).
 
-Download: [wireworld\_0\_1.zip](http://www.seriot.ch/wireworld/wireworld_0_1.zip) (2.6 MB)
+Download: [wireworld\_0\_2.zip](http://www.seriot.ch/wireworld/wireworld_0_2.zip) (3.4 MB)
 
 <img src="img/nand.png">
 

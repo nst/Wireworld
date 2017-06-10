@@ -43,7 +43,7 @@ IA
                             <action selector="stepActionWithSender:" target="-2" id="TsL-fv-rAw"/>
                         </connections>
                     </button>
-                    <button identifier="head" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vcu-07-tcu">
+                    <button identifier="*" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vcu-07-tcu">
                         <rect key="frame" x="45" y="443" width="54" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="radio" title="Head" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="Nve-xZ-pmW">
@@ -54,7 +54,7 @@ IA
                             <action selector="cellTypeActionWithSender:" target="-2" id="2oe-1x-7Ks"/>
                         </connections>
                     </button>
-                    <button identifier="tail" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ja7-fe-Kfa">
+                    <button identifier="=" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ja7-fe-Kfa">
                         <rect key="frame" x="45" y="421" width="43" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="radio" title="Tail" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="KMQ-gY-8lf">
@@ -65,7 +65,7 @@ IA
                             <action selector="cellTypeActionWithSender:" target="-2" id="J4H-qh-vIU"/>
                         </connections>
                     </button>
-                    <button identifier="wire" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lvD-ML-bms">
+                    <button identifier="-" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lvD-ML-bms">
                         <rect key="frame" x="45" y="399" width="50" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="radio" title="Wire" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="hn4-wq-TBY">
@@ -76,7 +76,7 @@ IA
                             <action selector="cellTypeActionWithSender:" target="-2" id="icG-Ve-rcz"/>
                         </connections>
                     </button>
-                    <button identifier="empty" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9eq-5g-Uwx">
+                    <button identifier=" " fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9eq-5g-Uwx">
                         <rect key="frame" x="45" y="377" width="61" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="radio" title="Empty" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="rvL-lf-8Fz">
@@ -116,6 +116,9 @@ IA
                         <buttonCell key="cell" type="push" title="Run/Stop" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="efQ-C5-NNu">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
                         </buttonCell>
                         <connections>
                             <action selector="runStopActionWithSender:" target="-2" id="2ko-Bw-Gay"/>

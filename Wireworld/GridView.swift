@@ -27,6 +27,10 @@ class GridView: NSView {
         return true
     }
     
+    override var isFlipped:Bool {
+        get { return true }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }

@@ -63,39 +63,32 @@ class Document: NSDocument, GridViewDelegate, ModelDelegate {
     }
     
     override func data(ofType typeName: String) throws -> Data {
-        
-        let d = model.dictionaryRepresentation
-
-        var data = Data()
-        
-        do {
-            data = try JSONSerialization.data(withJSONObject: d, options: [/*.prettyPrinted*/])
-        } catch let e as NSError {
-            self.presentError(e)
+        guard let data = model.stringRepresentation.data(using: .utf8) else {
+            throw NSError(domain: "WireWorld", code: 0, userInfo: [NSLocalizedDescriptionKey:"Cannot get data out of model"])
         }
-        
         return data
     }
     
     override func read(from data: Data, ofType typeName: String) throws {
         
         do {
-            if let d = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any] {
-                
-                if let m = Model(d: d) {
-                    self.hasUndoManager = true
-                    self.model = m
-                    
-                } else {
-                    Swift.print("-- no model from \(d)")
-                }
-            } else {
-                Swift.print("-- no data")
+            guard let s = String(data: data, encoding: .utf8) else {
+                throw NSError(domain: "WireWorld", code: 1, userInfo: [NSLocalizedDescriptionKey:"Cannot get string out of data"])
             }
+            
+            guard let existingModel = Model(s: s) else {
+                throw NSError(domain: "WireWorld", code: 2, userInfo: [NSLocalizedDescriptionKey:"No model"])
+            }
+
+            self.model = existingModel
+            self.hasUndoManager = true
+            
         } catch let e {
+            Swift.print("-- no data")
             self.presentError(e)
         }
-                
+        
+        
         self.updateChangeCount(.changeCleared)
     }
     
@@ -160,10 +153,6 @@ class Document: NSDocument, GridViewDelegate, ModelDelegate {
                 guard let image = self.gridView.toImage() else { assertionFailure(); return }
                 self.gifImages.append(image)
             })
-            
-            
-            
-            
         }
     }
 

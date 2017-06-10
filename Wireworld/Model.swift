@@ -25,45 +25,57 @@ class Model: NSObject {
         return Model(matrix: matrix)
     }
     
-    var dictionaryRepresentation : [String:Any] {
-        var d : [String:Any] = [:]
-        d["NB_COLS"] = matrix.NB_COLS
-        d["NB_ROWS"] = matrix.NB_ROWS
+    var stringRepresentation : String {
+        var rep = ""
         
-        var cells : [String] = []
-        
-        for c in matrix.cells {
-            let s = c.state.rawValue
-            cells.append(s)
+        for row in 0..<matrix.NB_ROWS {
+            for col in 0..<matrix.NB_COLS {
+                guard let cell = matrix.optionalCell((col: col, row: row)) else { assertionFailure(); return "" }
+                Swift.print("-- state: \(cell.state), rawValue: \(cell.state.rawValue)")
+                rep += cell.state.rawValue
+            }
+            rep += "\n"
         }
 
-        d["CELLS"] = cells
-        
-        return d
+        return rep
     }
 
     init(matrix: Matrix<Cell>) {
         self.matrix = matrix
     }
     
-    init?(d:[String:Any]) {
+    init?(s:String) {
         
-        guard let NB_COLS = d["NB_COLS"] as? Int else { assertionFailure(); return nil }
-        guard let NB_ROWS = d["NB_ROWS"] as? Int else { assertionFailure(); return nil }
+        let lines = s.components(separatedBy: "\n").filter { $0.characters.count > 0 }
+        
+        guard let firstLine = lines.first else { assertionFailure(); return nil }
+        
+        let NB_ROWS = lines.count
+        let NB_COLS = firstLine.characters.count
+
         self.matrix = Matrix<Cell>(rows: NB_ROWS, columns: NB_COLS)
-        
-        guard let CELLS = d["CELLS"] as? [String] else { assertionFailure(); return nil }
         
         var cells : [Cell] = []
         
-        for s in CELLS {
-            guard let state = CellState(rawValue: s) else { assertionFailure(); break }
-            let cell = Cell(state: state)
-            cells.append(cell)
+        for row in 0..<NB_ROWS {
+            let lineChars = lines[row].characters
+            
+            if lineChars.count != NB_COLS {
+                print("-- expected line of \(NB_COLS) chars, found \(lineChars.count)")
+                return nil
+            }
+            
+            for c in lineChars {
+                guard let state = CellState(rawValue: "\(c)") else {
+                    assertionFailure("-- found unknown state: \(c)")
+                    return nil
+                }
+                let cell = Cell(state: state)
+                cells.append(cell)
+            }
         }
         
         self.matrix.cells = cells
-        
     }
     
     func updateCell(col: Int, row: Int, newState: CellState) {

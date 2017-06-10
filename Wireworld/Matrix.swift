@@ -32,11 +32,11 @@ class Matrix<T:MatrixCell> : NSObject {
     subscript(column: Int, row: Int) -> T {
         get {
             assert(indexIsValid(row: row, column: column), "Index out of range, [\(column),\(row)] not within [\(self.NB_COLS),\(self.NB_ROWS)]")
-            return cells[(column * NB_ROWS) + row]
+            return cells[(NB_COLS * row) + column]
         }
         set {
             assert(indexIsValid(row: row, column: column), "Index out of range, [\(column),\(row)] not within [\(self.NB_COLS),\(self.NB_ROWS)]")
-            cells[(column * NB_ROWS) + row] = newValue
+            cells[(NB_COLS * row) + column] = newValue
         }
     }
     

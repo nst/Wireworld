@@ -89,6 +89,7 @@ class Document: NSDocument, GridViewDelegate, ModelDelegate {
             }
 
             self.model = existingModel
+            model.delegate = self
             self.hasUndoManager = true
         
         } catch let e {
@@ -99,7 +100,7 @@ class Document: NSDocument, GridViewDelegate, ModelDelegate {
         self.updateChangeCount(.changeCleared)
 
         if let gv = self.gridView {
-            gv.setNeedsDisplay(self.gridView.frame)
+            gv.setNeedsDisplay(self.gridView.bounds)
         }
     }
     
@@ -173,10 +174,8 @@ class Document: NSDocument, GridViewDelegate, ModelDelegate {
     }
 
     @IBAction func cellTypeAction(sender: NSButton) {
-        Swift.print("-- stepCellType")
-        
+
         guard let id = sender.identifier else { return }
-        Swift.print("-- id:            \(id)")
         
         guard let state = CellState(rawValue: id) else {
             Swift.print("-- no cell state for id \(id)")

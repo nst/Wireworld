@@ -107,7 +107,7 @@ class Document: NSDocument, GridViewDelegate, ModelDelegate {
     @IBAction func stepAction(sender: NSButton) {
         self.model.step()
     }
-
+    
     @IBAction func runStopAction(sender: NSButton) {
         Swift.print("-- runStopAction")
         
@@ -116,7 +116,9 @@ class Document: NSDocument, GridViewDelegate, ModelDelegate {
             timer = nil
             runStopButton.title = "Run"
 
-            // save gif
+            if self.gifImages.count == 0 {
+                return // nothing to save
+            }
             
             let savePanel = NSSavePanel()
             
@@ -151,22 +153,36 @@ class Document: NSDocument, GridViewDelegate, ModelDelegate {
             }
             
         } else {
+            
+            var makeGIF = false
+            if let altPressed = NSApp.currentEvent?.modifierFlags.contains(.option) {
+                makeGIF = altPressed
+            }
+            
             runStopButton.title = "Stop"
             
             // start making gif
-
+            
+            self.gifImages = []
+            
             guard let image0 = self.gridView.toImage() else { assertionFailure(); return }
-            gifImages.append(image0)
+            if makeGIF {
+                gifImages.append(image0)
+            }
             
             self.model.step()
 
             guard let image1 = self.gridView.toImage() else { assertionFailure(); return }
-            gifImages.append(image1)
-
+            if makeGIF {
+                gifImages.append(image1)
+            }
+            
             self.timer = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true, block: { (Timer) in
                 self.model.step()
                 guard let image = self.gridView.toImage() else { assertionFailure(); return }
-                self.gifImages.append(image)
+                if makeGIF {
+                    self.gifImages.append(image)
+                }
                 
                 //if self.gifImages.count == 32 { self.runStopAction(sender: self.runStopButton) }
             })

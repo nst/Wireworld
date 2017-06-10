@@ -140,7 +140,7 @@ class Document: NSDocument, GridViewDelegate, ModelDelegate {
                     }
                     
                     for image in self.gifImages {
-                        existingGIF.append(image: image, duration: 0.5)
+                        existingGIF.append(image: image, duration: 0.25)
                     }
                     
                     _ = existingGIF.write()
@@ -154,15 +154,20 @@ class Document: NSDocument, GridViewDelegate, ModelDelegate {
             
             // start making gif
 
-            self.model.step()
+            guard let image0 = self.gridView.toImage() else { assertionFailure(); return }
+            gifImages.append(image0)
             
-            guard let image = self.gridView.toImage() else { assertionFailure(); return }
-            gifImages.append(image)
+            self.model.step()
 
-            self.timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true, block: { (Timer) in
+            guard let image1 = self.gridView.toImage() else { assertionFailure(); return }
+            gifImages.append(image1)
+
+            self.timer = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true, block: { (Timer) in
                 self.model.step()
                 guard let image = self.gridView.toImage() else { assertionFailure(); return }
                 self.gifImages.append(image)
+                
+                //if self.gifImages.count == 32 { self.runStopAction(sender: self.runStopButton) }
             })
         }
     }

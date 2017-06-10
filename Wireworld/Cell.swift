@@ -32,7 +32,7 @@ enum CellState: String {
     
 }
 
-class Cell: NSObject, MatrixCell {
+class Cell: NSObject {
     required override init() {
         super.init()
     }

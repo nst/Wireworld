@@ -8,11 +8,7 @@
 
 import Foundation
 
-protocol MatrixCell {
-    init()
-}
-
-class Matrix<T:MatrixCell> : NSObject {
+class Matrix<T:NSObject> : NSObject {
     
     let NB_ROWS : Int
     let NB_COLS : Int

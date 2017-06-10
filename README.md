@@ -17,3 +17,13 @@ Wireworld can be used to build logic gates and, from there, [The Wireworld compu
 Download: [wireworld\_0\_1.zip](http://www.seriot.ch/wireworld/wireworld_0_1.zip) (2.6 MB)
 
 <img src="img/nand.png">
+
+<img src="img/and_6_cycles.gif">
+
+<img src="img/or.gif">
+
+<img src="img/xor_6_cycles.gif">
+
+<img src="img/nand_4_cycles.gif">
+
+<img src="img/memory_cell.gif">
